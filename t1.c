@@ -23,7 +23,7 @@ int get_max(int **ptr, int n, int m, int par)
 	}
 
 	int mx = -1;
-	#pragma omp parallel for
+	#pragma omp parallel for if(par)
 	for (int i = 1; i < n; i++)
 		if (min_arr[i] > mx)
 			mx = min_arr[i];
